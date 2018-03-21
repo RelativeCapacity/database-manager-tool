@@ -1,0 +1,12 @@
+C:\Users\Krystian\Desktop\DBMT\DBMT\bin\Release\DBMT.exe.config
+C:\Users\Krystian\Desktop\DBMT\DBMT\bin\Release\DBMT.exe
+C:\Users\Krystian\Desktop\DBMT\DBMT\bin\Release\DBMT.pdb
+C:\Users\Krystian\Desktop\DBMT\DBMT\bin\Release\DBMT.xml
+C:\Users\Krystian\Desktop\DBMT\DBMT\obj\Release\DBMT.vbprojResolveAssemblyReference.cache
+C:\Users\Krystian\Desktop\DBMT\DBMT\obj\Release\DBMT.Main.resources
+C:\Users\Krystian\Desktop\DBMT\DBMT\obj\Release\DBMT.Resources.resources
+C:\Users\Krystian\Desktop\DBMT\DBMT\obj\Release\DBMT.vbproj.GenerateResource.cache
+C:\Users\Krystian\Desktop\DBMT\DBMT\obj\Release\DBMT.vbproj.CoreCompileInputs.cache
+C:\Users\Krystian\Desktop\DBMT\DBMT\obj\Release\DBMT.exe
+C:\Users\Krystian\Desktop\DBMT\DBMT\obj\Release\DBMT.xml
+C:\Users\Krystian\Desktop\DBMT\DBMT\obj\Release\DBMT.pdb
