@@ -72,14 +72,6 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DBMTDataSet.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DBMTDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DBMTDataSet.vb">
-      <DependentUpon>DBMTDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Main.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -115,17 +107,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="DBMTDataSet.xsc">
-      <DependentUpon>DBMTDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="DBMTDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DBMTDataSet.Designer.vb</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DBMTDataSet.xss">
-      <DependentUpon>DBMTDataSet.xsd</DependentUpon>
-    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

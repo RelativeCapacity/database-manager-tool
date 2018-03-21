@@ -1,4 +1,8 @@
-﻿Public Class Main
+﻿Imports System.Data.SqlClient
+
+Public Class Main
+
+    Public CONNECTION As SqlConnection
 
     ' Lines below allows the user to use the 'navigation panel' by using the buttons to open the corresponding tab
 
@@ -24,8 +28,6 @@
 
     ' If connection is on a local server, it will be automatically filled in; Similar for user and password, af if it is used by Windows Authentication (not required)
 
-
-
     Private Sub LocalServerCheckBool_CheckedChanged(sender As Object, e As EventArgs) Handles LocalServerCheckBool.CheckedChanged
         If LocalServerCheckBool.Checked = True Then
             MakeConnServerName.Enabled = False
@@ -37,8 +39,11 @@
                 Dim ServerName As String = Environment.MachineName.ToUpper.ToString & "\" & "SQLEXPRESS"
                 MakeConnServerName.Text = ServerName
             End If
+
+            MakeConnServerType.Enabled = False
         Else
-                MakeConnServerName.Enabled = True
+            MakeConnServerType.Enabled = True
+            MakeConnServerName.Enabled = True
         End If
     End Sub
 
@@ -51,4 +56,87 @@
             MakeConnPassword.Enabled = True
         End If
     End Sub
+
+    ' Upon clicking "Connect" start the connection to the database from the entered details
+
+    Public ConnEstablished As Boolean = False ' By default, when program starts there are no open connections
+
+    Private Sub MakeConnBtn_Click(sender As Object, e As EventArgs) Handles MakeConnBtn.Click
+        Try
+            Dim ConnInfo As New ConnectionInformation(MakeConnServerType,
+                                                      MakeConnServerName,
+                                                      MakeConnDatabase,
+                                                      WindowsAuthenticationCheckBool,
+                                                      MakeConnUsername,
+                                                      MakeConnPassword)
+
+            Dim ConnectionString As String = "Data Source=" & ConnInfo.NameOfServer & ";Initial Catalog=" & ConnInfo.Database
+
+            If ConnInfo.WindowsAuthentication = True Then
+                ConnectionString &= ";Integrated Security=SSPI;"
+            Else
+                ConnectionString &= ";User ID=" & ConnInfo.Username & ";Password=" & ConnInfo.Password & ";"
+            End If
+
+            CONNECTION = New SqlConnection(ConnectionString)
+
+            CONNECTION.Open()
+            ConnEstablished = True
+        Catch ex As SqlException
+            MsgBox(ex.Errors(0).ToString)
+        End Try
+    End Sub
+
+    ' A database connection informnation collection dedicated class
+
+    Public Class ConnectionInformation
+
+        Inherits DBMT.Main
+
+        Public Type As String
+        Public NameOfServer As String ' Name <- Conflicts with another variable declared whilst creating a project
+
+        Public WindowsAuthentication As Boolean
+        Public Username As String
+        Public Password As String
+
+        Public Database As String
+
+        Sub New(ByVal _Type,
+                ByVal _Name,
+                ByVal _Database,
+                ByVal _WinAuth,
+                ByRef _Username,
+                ByRef _Password)
+
+            Type = _Type.Text
+            NameOfServer = _Name.Text
+            Database = _Database.Text
+
+            If _WinAuth.Checked = True Then
+                WindowsAuthentication = True
+            Else
+                WindowsAuthentication = False
+
+                _Username.Text = "WINDOWS AUTHENTICATION METHOD ENDORSED"
+                _Password.Text = "WINDOWS AUTHENTICATION METHOD ENDORSED"
+            End If
+
+            If WindowsAuthentication = False Then
+                Username = _Username.Text
+                Password = _Password.Text
+            End If
+        End Sub
+    End Class
+
+    ' Events upon the application exiting, achieved by closing the main form
+
+    Private Sub Main_FormClosing(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles MyBase.FormClosing
+        ' Connection must be closed to maintain server security and the load on the server
+        Try
+            CONNECTION.Close()
+        Catch ex As Exception
+        End Try
+    End Sub
+
 End Class

@@ -29,6 +29,14 @@ Partial Class Main
         Me.BtnExtra = New System.Windows.Forms.Button()
         Me.MainView = New System.Windows.Forms.TabControl()
         Me.Home = New System.Windows.Forms.TabPage()
+        Me.MakeConnDatabase = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.MakeConnBtn = New System.Windows.Forms.Button()
+        Me.MakeConnServerType = New System.Windows.Forms.ComboBox()
+        Me.MakeConnServerName = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.MakeConnPassword = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.WindowsAuthenticationCheckBool = New System.Windows.Forms.CheckBox()
         Me.MakeConnUsername = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -38,11 +46,6 @@ Partial Class Main
         Me.Add = New System.Windows.Forms.TabPage()
         Me.Modify = New System.Windows.Forms.TabPage()
         Me.Extra = New System.Windows.Forms.TabPage()
-        Me.MakeConnPassword = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.MakeConnServerName = New System.Windows.Forms.TextBox()
-        Me.MakeConnServerType = New System.Windows.Forms.ComboBox()
         Me.MainView.SuspendLayout()
         Me.Home.SuspendLayout()
         Me.SuspendLayout()
@@ -117,6 +120,9 @@ Partial Class Main
         '
         'Home
         '
+        Me.Home.Controls.Add(Me.MakeConnDatabase)
+        Me.Home.Controls.Add(Me.Label5)
+        Me.Home.Controls.Add(Me.MakeConnBtn)
         Me.Home.Controls.Add(Me.MakeConnServerType)
         Me.Home.Controls.Add(Me.MakeConnServerName)
         Me.Home.Controls.Add(Me.Label4)
@@ -133,6 +139,71 @@ Partial Class Main
         Me.Home.TabIndex = 0
         Me.Home.Text = "Home"
         Me.Home.UseVisualStyleBackColor = True
+        '
+        'MakeConnDatabase
+        '
+        Me.MakeConnDatabase.Location = New System.Drawing.Point(85, 170)
+        Me.MakeConnDatabase.Name = "MakeConnDatabase"
+        Me.MakeConnDatabase.Size = New System.Drawing.Size(212, 20)
+        Me.MakeConnDatabase.TabIndex = 13
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(5, 173)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(53, 13)
+        Me.Label5.TabIndex = 12
+        Me.Label5.Text = "Database"
+        '
+        'MakeConnBtn
+        '
+        Me.MakeConnBtn.Location = New System.Drawing.Point(222, 196)
+        Me.MakeConnBtn.Name = "MakeConnBtn"
+        Me.MakeConnBtn.Size = New System.Drawing.Size(75, 23)
+        Me.MakeConnBtn.TabIndex = 11
+        Me.MakeConnBtn.Text = "Connect"
+        Me.MakeConnBtn.UseVisualStyleBackColor = True
+        '
+        'MakeConnServerType
+        '
+        Me.MakeConnServerType.Items.AddRange(New Object() {"MS SQL EXPRESS"})
+        Me.MakeConnServerType.Location = New System.Drawing.Point(85, 18)
+        Me.MakeConnServerType.Name = "MakeConnServerType"
+        Me.MakeConnServerType.Size = New System.Drawing.Size(212, 21)
+        Me.MakeConnServerType.TabIndex = 0
+        '
+        'MakeConnServerName
+        '
+        Me.MakeConnServerName.Location = New System.Drawing.Point(85, 45)
+        Me.MakeConnServerName.Name = "MakeConnServerName"
+        Me.MakeConnServerName.Size = New System.Drawing.Size(212, 20)
+        Me.MakeConnServerName.TabIndex = 10
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(5, 48)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(67, 13)
+        Me.Label4.TabIndex = 9
+        Me.Label4.Text = "Server name"
+        '
+        'MakeConnPassword
+        '
+        Me.MakeConnPassword.Location = New System.Drawing.Point(85, 125)
+        Me.MakeConnPassword.Name = "MakeConnPassword"
+        Me.MakeConnPassword.Size = New System.Drawing.Size(212, 20)
+        Me.MakeConnPassword.TabIndex = 8
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(5, 128)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(53, 13)
+        Me.Label3.TabIndex = 7
+        Me.Label3.Text = "Password"
         '
         'WindowsAuthenticationCheckBool
         '
@@ -215,46 +286,6 @@ Partial Class Main
         Me.Extra.Text = "Extra"
         Me.Extra.UseVisualStyleBackColor = True
         '
-        'MakeConnPassword
-        '
-        Me.MakeConnPassword.Location = New System.Drawing.Point(85, 125)
-        Me.MakeConnPassword.Name = "MakeConnPassword"
-        Me.MakeConnPassword.Size = New System.Drawing.Size(212, 20)
-        Me.MakeConnPassword.TabIndex = 8
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(5, 128)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(53, 13)
-        Me.Label3.TabIndex = 7
-        Me.Label3.Text = "Password"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(5, 48)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(67, 13)
-        Me.Label4.TabIndex = 9
-        Me.Label4.Text = "Server name"
-        '
-        'MakeConnServerName
-        '
-        Me.MakeConnServerName.Location = New System.Drawing.Point(85, 45)
-        Me.MakeConnServerName.Name = "MakeConnServerName"
-        Me.MakeConnServerName.Size = New System.Drawing.Size(212, 20)
-        Me.MakeConnServerName.TabIndex = 10
-        '
-        'MakeConnServerType
-        '
-        Me.MakeConnServerType.Items.AddRange(New Object() {"MS SQL EXPRESS"})
-        Me.MakeConnServerType.Location = New System.Drawing.Point(85, 18)
-        Me.MakeConnServerType.Name = "MakeConnServerType"
-        Me.MakeConnServerType.Size = New System.Drawing.Size(212, 21)
-        Me.MakeConnServerType.TabIndex = 0
-        '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -296,4 +327,7 @@ Partial Class Main
     Friend WithEvents Label4 As Label
     Friend WithEvents MakeConnServerType As ComboBox
     Friend WithEvents MakeConnServerName As TextBox
+    Friend WithEvents MakeConnBtn As Button
+    Friend WithEvents MakeConnDatabase As TextBox
+    Friend WithEvents Label5 As Label
 End Class

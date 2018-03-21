@@ -3,10 +3,10 @@ C:\Users\Krystian\Desktop\DBMT\DBMT\bin\Debug\DBMT.exe
 C:\Users\Krystian\Desktop\DBMT\DBMT\bin\Debug\DBMT.pdb
 C:\Users\Krystian\Desktop\DBMT\DBMT\bin\Debug\DBMT.xml
 C:\Users\Krystian\Desktop\DBMT\DBMT\obj\Debug\DBMT.vbprojResolveAssemblyReference.cache
-C:\Users\Krystian\Desktop\DBMT\DBMT\obj\Debug\DBMT.Form1.resources
 C:\Users\Krystian\Desktop\DBMT\DBMT\obj\Debug\DBMT.Resources.resources
 C:\Users\Krystian\Desktop\DBMT\DBMT\obj\Debug\DBMT.vbproj.GenerateResource.cache
 C:\Users\Krystian\Desktop\DBMT\DBMT\obj\Debug\DBMT.vbproj.CoreCompileInputs.cache
 C:\Users\Krystian\Desktop\DBMT\DBMT\obj\Debug\DBMT.exe
 C:\Users\Krystian\Desktop\DBMT\DBMT\obj\Debug\DBMT.xml
 C:\Users\Krystian\Desktop\DBMT\DBMT\obj\Debug\DBMT.pdb
+C:\Users\Krystian\Desktop\DBMT\DBMT\obj\Debug\DBMT.Main.resources
